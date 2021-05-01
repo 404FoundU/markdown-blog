@@ -9,7 +9,7 @@ app.use("/articles", articles);
 app.get("/", (req, res) =>{
     const articles = [{
         title: "How to",
-        createdAt: Date.now(),
+        createdAt: new Date(),
         description: 'Test'
     }]
 
