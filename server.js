@@ -7,7 +7,14 @@ app.use(cors());
 app.set('view engine', 'ejs');
 app.use("/articles", articles);
 app.get("/", (req, res) =>{
-    res.render("index", {text: 'article'});
+    const articles = [{
+        title: "How to",
+        createdAt: Date.now(),
+        description: 'Test'
+    }]
+
+
+    res.render("index", {articles});
 })
 
 app.listen(5000);
