@@ -7,7 +7,7 @@ app.use(cors());
 app.set('view engine', 'ejs');
 app.use("/articles", articles);
 app.get("/", (req, res) =>{
-    res.render("index");
+    res.render("index", {text: 'article'});
 })
 
 app.listen(5000);
