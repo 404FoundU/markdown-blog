@@ -21,9 +21,10 @@ mongoose.connect(
             console.log(`listening on port ${port}`);
         })
     })
-app.use(cors());
 app.set('view engine', 'ejs');
-app.use("/articles", router);
+app.use(cors());
+app.use(express.urlencoded({extended: false}))
+
 app.get("/", (req, res) => {
     const articles = [{
         title: "How to",
@@ -31,5 +32,7 @@ app.get("/", (req, res) => {
         description: 'Test'
     }]
     res.render("articles/index", {articles});
-})
+});
+app.use("/articles", router);
+
 
