@@ -18,22 +18,21 @@ const articleSchema = new mongoose.Schema({
             type: Date,
             default: Date.now
         },
-    slug: {
-            type:String,
-        required: true,
-        unique:true
-    }
-
+        slug: {
+            type: String,
+            required: true,
+            unique: true
+        }
     }
 )
-
-articleSchema.pre('validate', () =>{
+articleSchema.pre('validate', function (next) {
     if (this.title) {
-        this.slug= slugify(this.title, {
+        this.slug = slugify(this.title, {
             strict: true,
             lower: true
         })
     }
+    next();
 })
-const Blog=  mongoose.model('Blog', articleSchema);
+const Blog = mongoose.model('Blog', articleSchema);
 export default Blog;
