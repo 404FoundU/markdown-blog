@@ -25,6 +25,7 @@
     "ejs": "^3.1.6",
     "express": "^4.17.1",
     "marked": "^2.0.3",
+    "method-override": "^3.0.0",
     "mongodb": "^3.6.6",
     "mongoose": "^5.12.7",
     "slugify": "^1.5.1"
