@@ -18,5 +18,5 @@ const articleSchema = new mongoose.Schema({
         }
     }
 )
-
-export default mongoose.model('blog1', articleSchema);
+const Blog=  mongoose.model('Blog', articleSchema);
+export default Blog;

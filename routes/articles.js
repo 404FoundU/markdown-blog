@@ -22,10 +22,12 @@ router.post('/', async(req, res) => {
     })
 
 try {
-    const article = await article.save();
+    await article.save();
     res.redirect(`/articles/${article.id}`)
 }
 catch (e){
+    console.error(e);
+    // res.status(500).send(e);
 res.render('articles/new', { article: article})
     }})
 
